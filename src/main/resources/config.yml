@@ -1,0 +1,11 @@
+no_permissions: "&cERROR &aYou don't have permissions to use this command"
+reload: "&aSe ha relodeado la config!"
+server_prefix: "&7[&aBanGui++&7] "
+ban_plugin: "litebans" # Supported: litebans | advancedban
+lunar:
+  join_staff_utils: true # ashland.core.staff
+  join_title: "&aWelcome to BanGui++"
+  join_subtitle: "&aUsing LunarClient"
+  join_notification: "&aConnected to BanGui++"
+  join_sound: "ORB_PICKUP"
+  staff_modules: "&7Staff Modules:"
