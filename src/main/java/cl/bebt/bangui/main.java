@@ -10,9 +10,6 @@ import cl.bebt.bangui.utils.utils;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.spigotmc.Metrics;
-
-import java.io.IOException;
 import java.util.HashMap;
 
 public final class main extends JavaPlugin {

@@ -21,7 +21,7 @@ public class Ban implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if (sender instanceof Player) {
             Player p = (Player) sender;
-            if (p.hasPermission("ashland.core.staff")) {
+            if (p.hasPermission("bangui.ban")) {
                 if (args.length == 1) {
                     new BanMenu(new PlayerMenuUtility(p), plugin, p, args[0]).open(p);
                 } else {

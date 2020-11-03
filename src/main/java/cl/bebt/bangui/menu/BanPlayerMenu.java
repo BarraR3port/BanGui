@@ -38,27 +38,17 @@ public abstract class BanPlayerMenu extends Menu {
         ItemMeta meta = p_head.getItemMeta();
         ArrayList<String> lore = new ArrayList<>();
         meta.setDisplayName(utils.chat("&5" + baned));
-        lore.add(utils.chat(utils.chat("&7Por qué quieres banear a &c") + baned + "&7?"));
+        lore.add(utils.chat(utils.chat("&7Why you wanna ban &c") + baned + "&7?"));
         meta.setLore(lore);
         p_head.setItemMeta(meta);
         inventory.setItem(13, p_head);
         inventory.setItem(17, super.redPanel());
         inventory.setItem(18, super.redPanel());
-        //inventory.setItem(19, super.greenPanel());
-        //inventory.setItem(25, super.greenPanel());
         inventory.setItem(26, super.redPanel());
         inventory.setItem(27, super.redPanel());
-        //inventory.setItem(28, super.greenPanel());
-        //inventory.setItem(34, super.greenPanel());
         inventory.setItem(35, super.redPanel());
         inventory.setItem(36, super.redPanel());
-        /*
-        for (int i = 37; i < 44; i++) {
-            if (inventory.getItem(i) == null) {
-                inventory.setItem(i, super.greenPanel());
-            }
-        }*/
-        inventory.setItem(49, makeItem(Material.REDSTONE, "&cCerrar"));
+        inventory.setItem(49, makeItem(Material.REDSTONE, "&cClose"));
 
     }
 

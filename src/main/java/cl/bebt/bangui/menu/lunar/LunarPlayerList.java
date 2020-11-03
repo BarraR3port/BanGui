@@ -28,7 +28,7 @@ public class LunarPlayerList extends PaginatedMenu {
 
     @Override
     public String getMenuName() {
-        return utils.chat("&cMute Players Chat");
+        return utils.chat("&cPlayer List");
     }
 
     @Override
@@ -44,14 +44,15 @@ public class LunarPlayerList extends PaginatedMenu {
         if (e.getCurrentItem().getType().equals(Material.SKULL_ITEM)) {
             try {
                 p.teleport(Bukkit.getPlayer(e.getCurrentItem().getItemMeta().getDisplayName()).getLocation());
+
             } catch (NullPointerException error) {
-                utils.tell(p, "&cEl jugador +&a" + e.getCurrentItem().getItemMeta().getDisplayName() + "&c no está conectado");
+                utils.tell(p,plugin.getConfig().getString("server_prefix")+ "&cThe player &a" + e.getCurrentItem().getItemMeta().getDisplayName() + "&c is not online");
             }
         } else if (close().equals(itemInMainHand)) {
             p.closeInventory();
         } else if (back().equals(itemInMainHand)) {
             if (page == 0) {
-                utils.tell(p, "&cYa estás en la primera pag!.");
+                utils.tell(p, plugin.getConfig().getString("server_prefix")+"&cYou are already in the first pag!");
             } else {
                 page = page - 1;
                 super.open(p);
@@ -61,7 +62,7 @@ public class LunarPlayerList extends PaginatedMenu {
                 page = page + 1;
                 super.open(p);
             } else {
-                utils.tell(p, "&cEstás en la última pag!.");
+                utils.tell(p, plugin.getConfig().getString("server_prefix")+"&cYou are already in the last pag!");
             }
         }
     }

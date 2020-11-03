@@ -1,5 +1,5 @@
 no_permissions: "&cERROR &aYou don't have permissions to use this command"
-reload: "&aSe ha relodeado la config!"
+reload: "&aConfig reloaded!"
 server_prefix: "&7[&aBanGui++&7] "
 ban_plugin: "litebans" # Supported: litebans | advancedban
 lunar:

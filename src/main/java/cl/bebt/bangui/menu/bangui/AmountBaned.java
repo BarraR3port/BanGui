@@ -75,7 +75,7 @@ public class AmountBaned extends PaginatedMenu {
                 break;
             } else {
                 //////////////////////////////
-                inventory.addItem(makeItem(Material.WATCH, "&7Ban for:&c " + index, index, 1));
+                inventory.addItem(makeItem(Material.WATCH, "&7Ban for:&c " + index, index, 0));
                 /////////////////////////////
             }
         }

@@ -146,8 +146,16 @@ public abstract class Menu implements InventoryHolder {
         item.setItemMeta(itemMeta);
 
         return item;
-    }
+    }@Deprecated
+    public ItemStack makeItem(int material, String displayName, int amount, int id, String... lore) {
+        ItemStack item = new ItemStack(material, amount, (short) id);
+        ItemMeta itemMeta = item.getItemMeta();
+        itemMeta.setDisplayName(utils.chat(displayName));
+        itemMeta.setLore(Arrays.asList(lore));
+        item.setItemMeta(itemMeta);
 
+        return item;
+    }
     @Override
     public Inventory getInventory() {
         return inventory;

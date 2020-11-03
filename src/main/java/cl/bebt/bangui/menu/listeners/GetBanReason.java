@@ -19,15 +19,16 @@ public class GetBanReason implements Listener {
     @EventHandler
     public void GetBanReason(AsyncPlayerChatEvent e) {
         Player p = e.getPlayer();
-        if (main.banning.get(p)) {
-            String reason = e.getMessage();
-            String baned = main.baned.get(p);
-            Bukkit.getScheduler().runTask(plugin, () -> new ChoseBanType(new PlayerMenuUtility(p), plugin, p, baned, reason).open(p));
-            main.baned.remove(p);
-            main.banning.remove(p);
-            e.setCancelled(true);
-        }
-
+        try {
+            if (main.banning.get(p)) {
+                String reason = e.getMessage();
+                String baned = main.baned.get(p);
+                Bukkit.getScheduler().runTask(plugin, () -> new ChoseBanType(new PlayerMenuUtility(p), plugin, p, baned, reason).open(p));
+                main.baned.remove(p);
+                main.banning.remove(p);
+                e.setCancelled(true);
+            }
+        }catch (NullPointerException ignored){}
 
     }
 }

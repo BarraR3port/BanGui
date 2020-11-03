@@ -14,12 +14,12 @@ public class Core implements TabExecutor {
 
     public Core(main plugin) {
         this.plugin = plugin;
-        plugin.getCommand("core").setExecutor(this);
+        plugin.getCommand("bangui").setExecutor(this);
     }
 
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-        if (sender.hasPermission("ashland.core")) {
+        if (sender.hasPermission("bangui.reload")) {
             if (args.length == 0) {
                 utils.tell(sender, plugin.getConfig().getString("error_msg"));
             } else if (args.length == 1) {

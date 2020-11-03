@@ -1,5 +1,5 @@
-name: BanGui++
-version: ${project.version}
+name: BanGui
+version: 1.0
 main: cl.bebt.bangui.main
 api-version: 1.13
 depend: [ LunarBreakerAPI ]
@@ -7,3 +7,5 @@ authors: [ BarraR3port ]
 commands:
   punish:
     aliases: [ sanction ]
+  lunar:
+  bangui:

@@ -10,7 +10,9 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+
 public class lunarStaff implements CommandExecutor {
+
     private final main plugin;
 
     public lunarStaff(main plugin) {
@@ -22,20 +24,21 @@ public class lunarStaff implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if (sender instanceof Player) {
             Player p = (Player) sender;
-            if (p.hasPermission("ashland.core.staff")) {
+            if (p.hasPermission("bangui.lunar")) {
                 if (args.length == 0) {
                     SMManager.setStaffModules(p);
                 } else if (args.length == 1) {
                     if (args[0].equals("gui")) {
                         new LunarPlayerList(new PlayerMenuUtility(p), plugin).open(p);
                     } else {
-                        utils.tell(p, "&cPrueba con /lunar <gui>");
-                        utils.tell(p, "&cPrueba con /lunar <ban> <PlayerName>");
+                        utils.tell(p, plugin.getConfig().getString("server_prefix")+"&cUse /lunar gui");
                     }
                 }
             } else {
-                utils.tell(p, "&cNo tienes permisos");
+                utils.tell(p, plugin.getConfig().getString("server_prefix")+plugin.getConfig().getString("no_permissions"));
             }
+        } else{
+            utils.tell(sender,plugin.getConfig().getString("server_prefix")+"&cThis command can only be used by players");
         }
         return false;
     }
