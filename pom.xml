@@ -73,6 +73,10 @@
             <id>CodeMC</id>
             <url>https://repo.codemc.org/repository/maven-public</url>
         </repository>
+        <repository>
+            <id>spigot-repo</id>
+            <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
+        </repository>
     </repositories>
     <dependencies>
         <dependency>
@@ -87,10 +91,11 @@
             <version>1.7</version>
             <scope>compile</scope>
         </dependency>
-        <!--<dependency>
-             <groupId>com.lunarclient</groupId>
-             <artifactId>bukkitapi</artifactId>
-             <version>1.0-20200729.212152-7</version>
-         </dependency>-->
+        <dependency>
+            <groupId>org.spigotmc</groupId>
+            <artifactId>spigot-api</artifactId>
+            <version>1.8.8-R0.1-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 </project>

@@ -30,7 +30,7 @@ public final class main extends JavaPlugin {
         new Core(this);
         new lunarStaff(this);
         new Ban(this);
-        new UpdateChecker(this, 9242).getLatestVersion(version -> {
+        new UpdateChecker(this, 85444).getLatestVersion(version -> {
             if (plugin.getDescription().getVersion().equals(version)) {
                 Bukkit.getConsoleSender().sendMessage(utils.chat(plugin.getConfig().getString("server_prefix") + "&aYou are using &bBanGui++!"+plugin.getDescription().getVersion()));
             } else {
