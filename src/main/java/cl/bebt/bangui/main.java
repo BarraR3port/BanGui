@@ -5,8 +5,10 @@ import cl.bebt.bangui.commands.Core;
 import cl.bebt.bangui.commands.lunarStaff;
 import cl.bebt.bangui.menu.listeners.GetBanReason;
 import cl.bebt.bangui.menu.listeners.MenuListener;
+import cl.bebt.bangui.menu.listeners.onThrowEnderPearl;
 import cl.bebt.bangui.utils.UpdateChecker;
 import cl.bebt.bangui.utils.utils;
+import org.bstats.bukkit.Metrics;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -27,9 +29,11 @@ public final class main extends JavaPlugin {
         plugin = this;
         Bukkit.getPluginManager().registerEvents(new MenuListener(), this);
         Bukkit.getPluginManager().registerEvents(new GetBanReason(this), this);
+        Bukkit.getPluginManager().registerEvents(new onThrowEnderPearl(), this);
         new Core(this);
         new lunarStaff(this);
         new Ban(this);
+        new Metrics( this,9242 );
         new UpdateChecker(this, 85444).getLatestVersion(version -> {
             if (plugin.getDescription().getVersion().equals(version)) {
                 Bukkit.getConsoleSender().sendMessage(utils.chat(plugin.getConfig().getString("server_prefix") + "&aYou are using &bBanGui++!"+plugin.getDescription().getVersion()));
